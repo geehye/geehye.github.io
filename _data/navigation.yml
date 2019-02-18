@@ -5,7 +5,7 @@ main:
   - title: "About"
     url: /about/
   - title: "Sample Posts"
-    url: /year-archive/
+    url: /categories/
   - title: "Sample Collections"
     url: /collection-archive/
   - title: "Terms &amp; Privacy Policy"
