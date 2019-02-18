@@ -1,1 +1,7 @@
 theme: jekyll-theme-minimal
+
+# Jekyll configuration
+markdown: kramdown
+highlighter: rouge
+paginate: 100 # it will paginate after this number
+language: 'en-uk'
