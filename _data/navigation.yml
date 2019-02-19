@@ -1,12 +1,8 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: /docs/quick-start-guide/
-  - title: "About"
+  - title: "Algorithms"
     url: /about/
-  - title: "Sample Posts"
+  - title: "Issues"
     url: /categories/
-  - title: "Sample Collections"
+  - title: "MyDays"
     url: /collection-archive/
-  - title: "Terms &amp; Privacy Policy"
-    url: /terms/
