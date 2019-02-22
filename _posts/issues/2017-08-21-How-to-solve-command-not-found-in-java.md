@@ -30,12 +30,14 @@ java-1.8.0-openjdk-devel.x86_64                                        1:1.8.0.1
 </pre>
 
 <br>
+
 ##### 2. 본인 java 버전과 동일한 버전 설치
 <pre>
 $ sudo yum install java-1.8.0-openjdk-devel.x86_64
 </pre>
 
 <br>
+
 ##### 3. 설치 확인
 <pre>
 $ javac -version<br>
