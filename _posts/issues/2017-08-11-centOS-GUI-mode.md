@@ -1,3 +1,10 @@
+---
+title: How to boot centsOS 7 graphical login (GUI mode)
+date: 2017-08-11
+layout:
+categories: issues
+---
+
 VertualBox에서 CentOS 7 GUI 모드로 실행하기
 <br><br>
 #### 1. GNOME desktop 그룹 설치
