@@ -6,7 +6,7 @@ categories: issues
 ---
 
 <pre>
-<b>> javac -cp ".;[PATH]/[JAR_FILE_NAME].jar;" [JAVA_FILE_NAME].java</b>
+> javac -cp ".;[PATH]/[JAR_FILE_NAME].jar;" [JAVA_FILE_NAME].java
 </pre>
 
 ex) javac -cp ".;C:\Users\user\Desktop\test\test.jar;" test.java
