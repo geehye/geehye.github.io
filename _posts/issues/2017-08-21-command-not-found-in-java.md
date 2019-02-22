@@ -1,12 +1,4 @@
----
-title: How to solve "bash: javac: command not found"
-date: 2017-08-21
-layout:
-categories: issues
----
-
-
-
+`$ java -version` 은 확인이 가능한데, <code>$ javac -version</code> 은 <u>명령어를 찾을 수 없습니다</u>가 뜨는 경우 해결하기
 > 분명 JAVA_HOME도 완벽히 설정했다면, jdk를 추가로 설치해야 하는 문제일 수 있다.
 
 <br>
