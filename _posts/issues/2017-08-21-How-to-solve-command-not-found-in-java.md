@@ -1,4 +1,5 @@
 ---
+title: how to solve 'command not found' in Java
 date: 2017-08-21
 layout:
 categories: issues
