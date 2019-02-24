@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "Algorithms"
-    url: /categories
+    url: /_pages/algorithms
   - title: "Issues"
     url: /_pages/issues
   - title: "MyDays"
