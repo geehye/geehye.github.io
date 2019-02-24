@@ -1,8 +1,8 @@
 # main links
 main:
   - title: "Algorithms"
-    url: /about/
+    url: /categories
   - title: "Issues"
     url: /categories
   - title: "MyDays"
-    url: /collection-archive/
+    url: /categories
