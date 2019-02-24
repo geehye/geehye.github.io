@@ -1,5 +1,5 @@
 ---
-title: "[programmers] Stack/Queue '쇠막대기' 문제풀이"
+title: "Stack/Queue '쇠막대기' 문제풀이"
 date: 2019-01-10
 layout:
 tags: programmers
