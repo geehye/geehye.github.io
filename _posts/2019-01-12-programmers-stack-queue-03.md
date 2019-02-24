@@ -1,5 +1,5 @@
 ---
-title: "Stack/Queue '기능개발' 문제풀이"
+title: "Stack/Queue '기능개발' 알고리즘 문제풀이"
 date: 2019-01-12
 layout:
 tags: programmers
