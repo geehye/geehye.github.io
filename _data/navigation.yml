@@ -3,6 +3,6 @@ main:
   - title: "Algorithms"
     url: /categories
   - title: "Issues"
-    url: /categories
+    url: /_pages/issues
   - title: "MyDays"
     url: /categories
