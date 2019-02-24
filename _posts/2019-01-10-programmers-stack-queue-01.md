@@ -5,7 +5,7 @@ layout:
 tags: programmers
 ---
 
-#### Problem
+## Problem
 여러 개의 쇠막대기를 레이저로 절단하려고 합니다. 효율적인 작업을 위해서 쇠막대기를 아래에서 위로 겹쳐 놓고, 레이저를 위에서 수직으로 발사하여 쇠막대기들을 자릅니다. 쇠막대기와 레이저의 배치는 다음 조건을 만족합니다.
 
 - 쇠막대기는 자신보다 긴 쇠막대기 위에만 놓일 수 있습니다.
@@ -26,7 +26,7 @@ tags: programmers
 * arrangement의 여는 괄호와 닫는 괄호는 항상 쌍을 이룹니다.
 
 
-#### Solution
+## Solution
 <pre>
 import java.util.Stack;
 public class IronStick {
