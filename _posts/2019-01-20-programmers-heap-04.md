@@ -50,4 +50,3 @@ Public class DoublePQ {
     return answer;
     }
 }
-</pre>
