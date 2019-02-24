@@ -1,5 +1,5 @@
 ---
-title: "Stack/Queue '다리를 지나는 트럭' 문제풀이"
+title: "Stack/Queue '다리를 지나는 트럭' 알고리즘 문제풀이"
 date: 2019-01-11
 layout:
 tags: programmers
