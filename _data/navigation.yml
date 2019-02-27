@@ -5,4 +5,4 @@ main:
   - title: "Issues"
     url: /_pages/issues
   - title: "MyDays"
-    url: /categories
+    url: /_pages/mydays
