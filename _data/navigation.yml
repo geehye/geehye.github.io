@@ -4,5 +4,5 @@ main:
     url: /_pages/algorithms
   - title: "Issues"
     url: /_pages/issues
-  - title: "MyDays"
-    url: /_pages/mydays
+  #- title: "MyDays"
+  #  url: /_pages/mydays
