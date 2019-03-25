@@ -4,6 +4,7 @@ date: 2019-03-23
 layout:
 categories:
 tags:
+collections: data_structure
 ---
 
 
@@ -23,3 +24,14 @@ tags:
 
 
 ## 2. Stack, Queue, Deque, Heap
+1) Stack 스택
+  - LIFO (Last In First Out)
+  - Usage 용도 : 인터럽트가 발생하여/부프로그램 호출시 복귀 주소 저장할 때, 함수 호출의/재귀 프로그램의 순서 제어, 후위표기법 산술 연산할 때, 컴파일러를 이용한 언어 번역할 때, ...
+  - 스택이 꽉 찬 상태를 overflow 오버플로우 라고 한다.
+  - 스택이 텅 빈 상태를 underflow 언더플로우 라고 한다.
+  
+2) Queue 큐
+  - FIFO (First In First Out)
+  - 두 개의 포인터 front/head, rear/tail이 있다.
+  
+3) 
