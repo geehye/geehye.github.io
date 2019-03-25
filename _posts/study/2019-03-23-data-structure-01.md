@@ -22,4 +22,4 @@ tags:
   - cf. Array List : 저장 순서가 유지되고 중복 허용이 된다. 데이터 저장 공간으로 배열을 사용한다. 인덱스로 접근 시 O(1).
 
 
-## 2. Stack, Queue, Deque
+## 2. Stack, Queue, Deque, Heap
