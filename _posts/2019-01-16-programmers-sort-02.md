@@ -1,5 +1,5 @@
 ---
-title: "Sort '가장 큰 수' 알고리즘 문제풀이"
+title: "Sort 프로그래머스 자바 '가장 큰 수' 문제풀이"
 date: 2019-01-16
 layout:
 tags: programmers
