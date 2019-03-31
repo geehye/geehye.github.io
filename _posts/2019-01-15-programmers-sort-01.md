@@ -1,5 +1,5 @@
 ---
-title: "Sort 'K번째수' 알고리즘 문제풀이"
+title: "Sort 프로그래머스 자바 'K번째수' 문제풀이"
 date: 2019-01-15
 layout:
 tags: programmers
