@@ -1,5 +1,5 @@
 ---
-title: "Sort 'H-Index' 알고리즘 문제풀이"
+title: "Sort 프로그래머스 자바 'H-Index' 문제풀이"
 date: 2019-01-17
 layout:
 tags: programmers
