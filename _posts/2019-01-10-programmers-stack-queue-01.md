@@ -1,5 +1,5 @@
 ---
-title: "Stack/Queue '쇠막대기' 알고리즘 문제풀이"
+title: "Stack/Queue 프로그래머스 '쇠막대기' 문제풀이"
 date: 2019-01-10
 layout: posts
 tags: programmers
