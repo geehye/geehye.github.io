@@ -32,14 +32,13 @@ author_profile: true
     {% if tag[1].size == i and tag[0] == 'baekjoon' or tag[0] == 'programmers'%}
       <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
         <h2 class="archive__subtitle">{{ tag[0] }}</h2>
-        <div class="entries-{{ page.entries_layout | default: 'list' }}">
+
           {% for post in tag.last %}
             {% include archive-single.html %}
           {% endfor %}
           {% include paginator.html %}
-        </div>
-        <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
-      
+
+        <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>      
       </section>
     {% endif %}
   {% endfor %}
