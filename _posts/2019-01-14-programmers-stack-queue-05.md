@@ -1,5 +1,5 @@
 ---
-title: "Stack/Queue '주식가격' 알고리즘 문제풀이"
+title: "Stack/Queue 프로그래머스 자바 '주식가격' 문제풀이"
 date: 2019-01-14
 layout:
 tags: programmers
