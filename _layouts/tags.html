@@ -16,7 +16,7 @@ author_profile: true
 <ul class="taxonomy__index">
   {% for i in (1..tags_max) reversed %}
     {% for tag in site.tags %}
-      {% if tag[1].size == i and tag[0] == 'baekjoon'%}
+      {% if tag[1].size == i and tag[0] == 'baekjoon' or tag[0] == 'programmers'%}
         <li>
           <a href="#{{ tag[0] | slugify }}">
             <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
@@ -29,7 +29,7 @@ author_profile: true
 
 {% for i in (1..tags_max) reversed %}
   {% for tag in site.tags %}
-    {% if tag[1].size == i %}
+    {% if tag[1].size == i and tag[0] == 'baekjoon' or tag[0] == 'programmers'%}
       <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
         <h2 class="archive__subtitle">{{ tag[0] }}</h2>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
