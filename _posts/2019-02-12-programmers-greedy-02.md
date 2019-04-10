@@ -1,5 +1,5 @@
 ---
-title: "Greedy '큰 수 만들기' 알고리즘 문제풀이"
+title: "Greedy 프로그래머스 알고리즘 자바 '큰 수 만들기' 문제풀이"
 date: 2019-02-12
 layout:
 tags: programmers
