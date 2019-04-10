@@ -19,44 +19,55 @@ tags: programmers
 
 
 ## Solution
-아직 테스트 케이스 1번을 통과하지 못 했다. 왜 얘만 못 할까...ㅠㅠ (추후 해결 예정)
-참고로 시작 공항은 항상 'ICN' 인천 공항임을 잊어서는 안 된다! 이것을 해결하면 테스트 케이스 4번 문제를 통과한다.
+- 가능한 경로가 2개 이상일 경우 알파벳 순서가 앞서는 경로를 반환한다고 하여 비교하기 쉽게 String 타입으로 경로를 저장하였다. 구분값은 ","
+- 모든 항공권을 사용해야 하므로 visit[] 배열로 해당 항공권을 사용한적이 있는지 확인하였다.
+- visit이 모두 true인지 확인하는 것보다 시간을 줄이기 위해 총 몇 장의 항공권을 사용했는지 카운트 변수 cnt를 두었다. 다 사용했을 경우 해당 경로를 list에 저장했다. 만약 항공권을 다 사용하지 못 하고 경로가 종료되는 경우는 list에 저장되지 않는다.
+- 지금까지의 경로 외에 중간에 다른 경로를 갈 수 있기 때문에 dfs 호출이 종료되면 visit과 route에서 현재 방문 위치를 빼줘야 한다.
+- list를 오름차순으로 정렬한다. (문자가 빠른 순) 
 
 
 ## Code
-<pre>
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 class Solution {
-    	static boolean[] v;
-	public String dfs(String[][] tickets, int idx) {
-		String from, to, route = "";
-		v[idx] = true;
-		for(int i = 0; i < tickets.length; i++) {
-			if(i == idx) continue;
-			from = tickets[i][0]; to = tickets[i][1];
-			
-			if(tickets[idx][1].equals(tickets[i][0]) && !v[i]) {
-				route = "/" + tickets[i][1];
-				route += dfs(tickets, i);
-			}
+    List<String> list = new ArrayList<>();
+	static String route = "";
+	static boolean[] visit;
+	
+	private void dfs(String[][] tickets, String end, int cnt) {
+		route += end + ",";
+		
+		if(cnt == tickets.length) {
+			list.add(route); return;
 		}
 		
-		return route;
+		for(int i = 0; i < tickets.length; i++) {
+			String s = tickets[i][0], e = tickets[i][1];
+			if(s.equals(end) && !visit[i]) {
+				visit[i] = true;
+				dfs(tickets, e, cnt + 1);
+				visit[i] = false; route = route.substring(0, route.length()-4);
+			}
+		}
 	}
 	
 	public String[] solution(String[][] tickets) {
-	    int n = tickets.length;
-		String min = "Z".repeat(30000), route = "";   
-
-		for(int i = 0; i < n; i++) { // start
-			if(tickets[i][0].equals("ICN")) {
-				v = new boolean[n];
-				route = tickets[i][0] + "/" + tickets[i][1];			
-				route += dfs(tickets, i);
-				
-				if(route.length() == 4*n+3 && min.compareTo(route) > 0)
-					min = route;
+		for(int i = 0; i < tickets.length; i++) {
+			visit = new boolean[tickets.length];
+			String start = tickets[i][0], end = tickets[i][1];
+			
+			if(start.equals("ICN")) {
+				route = start + ","; visit[i] = true; 
+				dfs(tickets, end, 1);
 			}
-		}		
-	    return min.split("/");
+		}
+		
+		Collections.sort(list);
+		String[] answer = list.get(0).split(",");
+
+		return answer;
 	}
 }
+```
