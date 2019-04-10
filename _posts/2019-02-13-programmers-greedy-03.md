@@ -1,5 +1,5 @@
 ---
-title: "Greedy '조이스틱' 알고리즘 문제풀이"
+title: "Greedy 프로그래머스 알고리즘 자바 '조이스틱' 문제풀이"
 date: 2019-02-13
 layout:
 tags: programmers
@@ -29,40 +29,47 @@ ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA
 
 
 ## Solution
-<pre>
-public class JoyStick {
-	public int solution(String name) {
-        int answer = 0;
-        byte toRight = 0;
-        byte toLeft = 0;
-        byte ascii = 0;
-        char[] tmpRight = new char[name.length()];
-        char[] tmpLeft = new char[name.length()];
-        for(int i = 0; i < name.length(); i++) {
-        	tmpRight[i] = 'A';
-        	tmpLeft[i] = 'A';
-        }        	
-        
-        for(int i = 0; i < name.length(); i++) {
-        	ascii = (byte) name.charAt(i);
-        	if(ascii >= 78)
-        		answer += (91 - ascii);
-        	else
-        		answer += (ascii - 65);
-        	
-        	if(!String.copyValueOf(tmpRight).equals(name)) {
-            	if(name.charAt(i) != 'A')
-            		tmpRight[i] = name.charAt(i);
-            	toRight++;
-        	}
-        	tmpLeft[0] = name.charAt(0);
-        	if(!String.copyValueOf(tmpLeft).equals(name)) {        		
-        		if(name.charAt(name.length()-i-1) != 'A')
-        			tmpLeft[name.length()-i-1] = name.charAt(name.length()-i-1);
-            	toLeft++;
-        	}
-        }
+※ 2019.02.28 테스트 케이스가 추가되었는데 그래서 11번 문제는 통과하지 못 했다. 아마도 'AAABAAAA' 와 같은 유형일 것 같은데 해결 방법이 조금 복잡해질 것 같아서 해결하는 것을 잠시 보류한다.<br>
+- 테스트케이스가 추가되기 전에는 좌측으로 해결하는 방법과 우측으로 해결하는 방법 2가지만 고려했다.
+- 좌측으로 움직일 경우 첫번째 커서에서 마지막 커서로 움직이게 되는데, 커서 이동 전에 name의 첫번째 값을 바꾼 후 이동하는 것이 훨씬 적은 조작 횟수가 나온다. 따라서 for문을 돌기 전에 첫번째 문자에 대해 처리를 한다.
+- A ~ Z 중에서 A를 0으로 뒀을 때 N은 13이고 O는 14이다. 하지만, Z ~ A 중에서 Z를 1로 뒀을 때 (커서를 끝으로 움직이면 스틱을 한 번 움직인 것이기 때문) O는 12이고 N은 13이다. 따라서 문자가 13번째보다 앞에 있는지 뒤에 있는지에 따라 '다음 알파벳'으로 갈지 '이전 알파벳'으로 갈지 정한다.
+- 나머지도 마찬가지로 수행하며, 현재까지 바뀐 문자열이 원하는 문자열과 같은지 확인하고 같으면 더이상 스틱을 조작하지 않도록 한다.
+- 매 움직임마다 카운트 변수 lcnt, rcnt를 증가시키고 이 중 가장 작은 값을 반환한다.
 
-        return answer + Math.min(Math.min(toRight, toLeft), Math.min(toRight, toLeft)*2 + Math.max(toRight, toLeft));
+## Code
+```java
+import java.util.Arrays;
+class Solution {
+    public int solution(String name) {
+        int lcnt = 0, rcnt = 0, idx = 0;
+        char[] larr = new char[name.length()];
+        char[] rarr = new char[name.length()];
+        Arrays.fill(larr, 'A'); Arrays.fill(rarr, 'A');
+        
+        if(name.charAt(0) != 'A') {
+        	int cnt = (name.charAt(0) - 'A' <= 13? name.charAt(0) - 'A' : 91 - name.charAt(0));
+        	
+        	rarr[0] = name.charAt(0); larr[0] = name.charAt(0);
+        	rcnt = lcnt = cnt;
+		idx = 1;
+        }
+        
+        for(int i = idx, j = name.length() - 1; i < name.length(); i++, j--) {	
+        	if(!String.copyValueOf(rarr).equals(name)) {
+        		rcnt++;
+            		if(name.charAt(i) - 'A' <= 13) rcnt += name.charAt(i) - 'A';
+            		else rcnt += 91 - name.charAt(i);
+            		rarr[i] = name.charAt(i);
+        	}
+        	
+        	if(!String.copyValueOf(larr).equals(name) && j > 0) {
+            		lcnt++;
+            		if(name.charAt(j) - 'A' <= 13) lcnt += name.charAt(j) - 'A';
+            		else lcnt += 91 - name.charAt(j);        	        	
+            		larr[j] = name.charAt(j);
+        	}
+        }     
+        return Math.min(lcnt, rcnt);  
     }
 }    
+```
