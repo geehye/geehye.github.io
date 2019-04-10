@@ -1,5 +1,5 @@
 ---
-title: "BinarySearch 프로그래머스 알고리즘 자바 이분탐색 '징검다리' 문제풀이"
+title: "BinarySearch 프로그래머스 알고리즘 자바 '징검다리' 문제풀이"
 date: 2019-04-10
 layout:
 tags: programmers
