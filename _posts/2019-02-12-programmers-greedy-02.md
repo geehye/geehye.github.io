@@ -16,31 +16,32 @@ tags: programmers
 
 
 ## Solution
-해당 코드는 테스트 케이스 10번을 시간초과로 통과하지 못 했다. 해결하려는 중.
+※ 테스트 10번에서 시간초과가 나온다면, answer를 더할 때 stringbuilder를 사용하면 해결된다.<br>
+- 입력된 숫자가 모두 0일 경우 예외처리를 한다. `if(number.charAt(0) == '0') return "0"`
+- 각 자리 숫자 하나 하나 뽑을 때마다 그때의 최대값을 선택해야 한다. 가령, 예제에서 10의 자리 숫자로 9를 선택하고 1의 자리 숫자로 그 다음으로 큰 수 4를 선택해야 정답이 나온다.
+- 인덱스가 0부터 시작할 때, k개의 숫자를 뺏을 때 최대 숫자는 적어도 0번째부터 k번째 숫자 중에 나와야 한다. (예제에 따르면, 1부터 2까지 중 숫자 하나를 골라야 마지막 숫자 4를 골랐을 때 답변의 총 길이가 2가 된다. 만약 첫번째 숫자로 4를 고르면 그 다음 숫자를 고를 수 없으므로 정답이 될 수 없다.따라서 범위는 `int i = 0; i < number.length() - k; i++`이다.
+- 지금 위치부터 그 다음 숫자를 뽑을 때까지 과정 역시 위와 같다. 범위는 `int j = idx; j <= k + i; j++`이다.
 
 
-<pre>
-public class MakeBigNum {
-	public String solution(String number, int k) { // time out (test 10)
-        String answer = "";
-        int index = 0;
-        char max = '0';
-       
-        for(int i = 0; i < number.length()-k; i++) {
-        	for(int j = index; j < k+1+i; j++) {
-        		if(max < number.charAt(j)) {
-        			max = number.charAt(j);
-        			index = j + 1;
-        		}
-        	}
-        	
-        	answer += max;
-        	max = '0';
-        	
-        	if(answer.length() == number.length()-k)
-        		break;
-        }
-        
-        return answer;
+## Code
+```java
+class Solution {
+    public String solution(String number, int k) {
+        int idx = 0;
+        char max;
+	StringBuilder answer = new StringBuilder();
+
+	if(number.charAt(0) == '0') return "0";
+	for(int i = 0; i < number.length() - k; i++) {
+		max = '0';
+		for(int j = idx; j <= k + i; j++) {
+	        	if(max < number.charAt(j)) {
+	        		max = number.charAt(j); idx = j + 1;
+	        	}
+		}			
+		answer.append(max);
+	}
+        return answer.toString();
     }
-}    
+}
+```
