@@ -107,7 +107,7 @@ analytics:
 comments:
   provider: "disqus"
   disqus:
-    shortname: "disqus_LgFPJxF84Y"
+    shortname: "geehye-github"
 
 
 # Site Author
