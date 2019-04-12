@@ -107,7 +107,7 @@ analytics:
 comments:
   provider: "disqus"
   disqus:
-    shortname: "your-disqus-shortname"
+    shortname: "disqus_LgFPJxF84Y"
 
 
 # Site Author
