@@ -103,6 +103,12 @@ analytics:
     tracking_id          :
     anonymize_ip         : # true, false (default)
 
+# Comments
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "your-disqus-shortname"
+
 
 # Site Author
 author:
