@@ -4,7 +4,7 @@ main:
     url: /_pages/algorithms
   - title: "Issues"
     url: /_pages/issues
-  - title: "CSstudy"
-    url: /_pages/csstudy
+  - title: "TIL"
+    url: /_pages/todayILearned
   - title: "MyDays"
     url: /_pages/mydays
