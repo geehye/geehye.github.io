@@ -43,5 +43,5 @@ tags: DataStructure
 
 
 <br><br>
-※ 참고 : 위키백과, 
+※ 참고 : 위키백과, 나무위키 
 
