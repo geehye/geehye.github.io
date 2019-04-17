@@ -11,6 +11,11 @@ tags: DataStructure
 - In-order 중위 순회 : 왼쪽 자식 - 루트 - 오른쪽 자식
 - Post-order 후위 순회 : 왼쪽 자식 - 오른쪽 자식 - 루트
 
+#### 2. 트리와 그래프 차이
+- 트리는 방향 그래프이다.
+- 트리는 사이클 cycle, 자체 간선 self-loop 도 불가능하다.
+- 그래프는 루트 노드의 개념이 없는 반면, 트리는 한 개의 루트 노드만 존재하며 모든 자식 노드는 한 개의 부모 노드만을 가진다.
+
 <br><br>
 ## 2. Sorting Algorithms 정렬 알고리즘
 #### 1. Insertion Sort 삽입 정렬
