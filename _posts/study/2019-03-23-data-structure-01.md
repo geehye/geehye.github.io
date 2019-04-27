@@ -1,6 +1,6 @@
 ---
 title: "For job interview, about Data Structure 면접 공부하기-자료구조"
-date: 2019-03-23
+date: 2019-04-27
 layout:
 categories:
 tags: DataStructure
@@ -60,7 +60,19 @@ collections:
   
 #### 2. Hashing 해싱
   - 해시함수를 이용해서 데이터를 해시테이블에 저장하고 검색하는 기법
-  - 해시함수는 데이터가 저장되어 있는 곳을 알려 주기 때문에 다량의 데이터 중에서도 원하는 데이터를 빠르게 찾을 수 있다.
+  - 해싱은 하나의 문자열을 원래의 것을 상징하는 더 짧은 길이의 값이나 키로 변환하는 것이다.
+  - 해시함수는 데이터가 저장되어 있는 곳을 알려 주기 때문에 순차 검색에 비해 다량의 데이터 중에서 원하는 데이터를 빠르게 찾을 수 있다.
+
+#### 3. Hash Collision 해시 충돌
+  - 해시 함수가 서로 다른 두 개의 입력값에 대해 동일한 출력값(= key 키)을 내는 상황을 의미한다.
+  - 해시 함수의 입력값은 무한하지만, 출력값의 가짓수는 유한하므로 해시 충돌은 반드시 발생한다.
+  - 충돌 해결 방법
+    - Chaining 체이닝 : 각각의 해시 테이블 인덱스에 해당하는 자료구조를 연결 리스트로 만들어 데이터를 삽입하다가 해시 충돌이 발생하면 연결 리스트로 데이터를 연결하는 방법이다. 복잡한 계산식을 사용할 필요가 개방 주소법에 비해 적다.
+    - Open addressing 개방 주소법 : 해시 테이블 인덱스 중 비어있는 공간을 할당하는 방법으로 데이터의 주소값이 변한다. 삽입/삭제 시 오버헤드가 적고 저장할 데이터가 적을 때 유리하다.
+      - Linear Probing 선형 탐색 : 해시 충돌 시 다음 bucket 버켓 혹은 몇 개를 건너 뛴 버켓에 데이터를 삽입한다.
+      - Quadratic Probing 제곱 탐색 : 해시 충돌 시 제곱만큼 건너 뛴 버켓에 데이터를 삽입한다.
+      - Double Probing 이중 해시 : 해시 충돌 시 다른 해시 함수를 한 번 더 적용한 결과를 이용한다.
+    
   
 <br><br>
 ## 4. 깊이 우선 탐색 DFS와 너비 우선 탐색 BFS
@@ -78,4 +90,4 @@ collections:
 
 
 <br><br>
-※ 참고 : https://en.wikipedia.org/wiki/Heap_(data_structure), https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist, 시나공 정보처리기사, Java의 정석(남궁성 지음), TopCoder 알고리즘 트레이닝(타카하시 나오히로 지음)
+※ 참고 : https://en.wikipedia.org/wiki/Heap_(data_structure), https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist, https://preamtree.tistory.com/20, 시나공 정보처리기사, Java의 정석(남궁성 지음), TopCoder 알고리즘 트레이닝(타카하시 나오히로 지음)
