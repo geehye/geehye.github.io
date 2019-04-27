@@ -41,7 +41,34 @@ tags: DataStructure
 - 퀵 정렬은 기준(피벗)을 두고 정렬한다면, 합병 정렬은 리스트의 길이가 1이 될 때까지 분할한 다음 대소를 비교하며 합병하고 그것을 또 비교하는 방식이다.
 - 시간 복잡도는 O(NlogN)이다.
 
+<br><br>
+## 3. Fibonacci 피보나치 수열 알고리즘
+- Recursion 재귀 : 시간복잡도는 O(2^n)이며, 재귀를 호출할 때마다 스택에 새로운 계층을 쌓으므로 공간복잡도는 O(n)이다. 스택 오버플로우가 발생할 수 있다.
+```java
+public int fibo_recursion(int n) {
+  if(n == 0) return 0;
+  if(n == 1) return 1;
+  return fibo_recursion(n-1) + fibo_recursion(n-2);
+}
+```
+- Dynamic Programming 동적 프로그래밍 : 시간복잡도는 O(n^2)이며, 이전 연산 값을 memoization 메모이제이션(cache 캐시)을 하며 subproblem을 해결하는 방식이다.
+```java
+public long fibo_dynamicP(int n) {
+  if(fibo_dp[n] != -1) return fibo_dp[n];
+  fibo_dp[n] = fibo_dynamicP(n-1) + fibo_dynamicP(n-2);
+  return fibo_dp[n];
+}
+```
+- Iteration 반복 : 시간복잡도는 O(n)이며, 안정성 문제로 가장 좋은 방법이다. 
+```java
+public long fibo_iteration(int n) {
+  for(int i = 2; i < n; i++) fibo_arr[i] = fibo_arr[i-1] + firbo_arr[i-2];
+  return fibo_arr[n-1] + fibo_arr[n-2];
+}
+```
+
+
 
 <br><br>
-※ 참고 : 위키백과, 나무위키 
+※ 참고 : https://makefortune2.tistory.com/60, 위키백과, 나무위키 
 
