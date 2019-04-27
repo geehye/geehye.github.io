@@ -43,7 +43,10 @@ tags: DataStructure
 
 <br><br>
 ## 3. Fibonacci 피보나치 수열 알고리즘
-- Recursion 재귀 : 시간복잡도는 O(2^n)이며, 재귀를 호출할 때마다 스택에 새로운 계층을 쌓으므로 공간복잡도는 O(n)이다. 스택 오버플로우가 발생할 수 있다.
+- Recursion 재귀
+  - 시간복잡도는 O(2^n)이며, 재귀를 호출할 때마다 스택에 새로운 계층을 쌓으므로 공간복잡도는 O(n)이다.
+  - 반드시 탈출 조건이 있어야 스택 오버플로우 stack overflow 를 방지할 수 있다.
+  - 같은 행위가 반복될 때 재귀 함수를 사용한다.
 ```java
 public int fibo_recursion(int n) {
   if(n == 0) return 0;
@@ -51,7 +54,9 @@ public int fibo_recursion(int n) {
   return fibo_recursion(n-1) + fibo_recursion(n-2);
 }
 ```
-- Dynamic Programming 동적 프로그래밍 : 시간복잡도는 O(n^2)이며, 이전 연산 값을 memoization 메모이제이션(cache 캐시)을 하며 subproblem을 해결하는 방식이다.
+- Dynamic Programming 동적 프로그래밍
+  - 시간복잡도는 O(n^2)이다.
+  - 이전 연산 값을 memoization 메모이제이션(cache 캐시)을 하며 subproblem을 해결하는 방식이다.
 ```java
 public long fibo_dynamicP(int n) {
   if(fibo_dp[n] != -1) return fibo_dp[n];
@@ -70,5 +75,5 @@ public long fibo_iteration(int n) {
 
 
 <br><br>
-※ 참고 : https://makefortune2.tistory.com/60, 위키백과, 나무위키 
+※ 참고 : https://makefortune2.tistory.com/60, https://wayhome25.github.io/cs/2017/04/15/cs-16-1-recursion/, 위키백과, 나무위키 
 
