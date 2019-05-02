@@ -47,23 +47,37 @@ tags: DataStructure
   - 시간복잡도는 O(2^n)이며, 재귀를 호출할 때마다 스택에 새로운 계층을 쌓으므로 공간복잡도는 O(n)이다.
   - 반드시 탈출 조건이 있어야 스택 오버플로우 stack overflow 를 방지할 수 있다.
   - 같은 행위가 반복될 때 재귀 함수를 사용한다.
-```java
-public int fibo_recursion(int n) {
-  if(n == 0) return 0;
-  if(n == 1) return 1;
-  return fibo_recursion(n-1) + fibo_recursion(n-2);
-}
-```
+  - 예제.
+  ```java
+  public int fibo_recursion(int n) {
+    if(n == 0) return 0;
+    if(n == 1) return 1;
+    return fibo_recursion(n-1) + fibo_recursion(n-2);
+  }
+  ```
 - Dynamic Programming 동적 프로그래밍
-  - 시간복잡도는 O(n^2)이다.
+  - 시간복잡도는 O(n)이다.
   - 이전 연산 값을 memoization 메모이제이션(cache 캐시)을 하며 subproblem을 해결하는 방식이다.
-```java
-public long fibo_dynamicP(int n) {
-  if(fibo_dp[n] != -1) return fibo_dp[n];
-  fibo_dp[n] = fibo_dynamicP(n-1) + fibo_dynamicP(n-2);
-  return fibo_dp[n];
-}
-```
+  - 다음은 Top-down 방식이다.
+  ```java
+  int[] fibo_dp = new int[100]; // 임의로 사이즈 100으로 한정
+  public int fibo_dynamicP(int n) {
+    if(n <= 1) return n;
+    if(fibo_dp[n] != 0) return fibo_dp[n];
+    fibo_dp[n] = fibo_dynamicP(n-1) + fibo_dynamicP(n-2);
+    return fibo_dp[n];
+  }
+  ```
+  - 다음은 Bottom-up 방식이다.
+  ```java
+  int[] fibo_dp = new int[100]; // 임의로 사이즈 100으로 한정
+  public int fibo_dynamicP(int n) { 
+    fibo_dp[0] = fibo_dp[1] = 1; 
+    for(int i = 2; i <= n; i++) fibo_dp[i] = fibo_dp[i-1] + fibo_dp[i-2];
+    return fibo_dp[n];
+  }
+  ```
+ 
 - Iteration 반복 : 시간복잡도는 O(n)이며, 안정성 문제로 가장 좋은 방법이다. 
 ```java
 public long fibo_iteration(int n) {
