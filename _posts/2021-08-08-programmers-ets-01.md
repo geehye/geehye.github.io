@@ -1,5 +1,5 @@
 ---
-title: "XXX programmers 프로그래머스 자바 '배달' 문제풀이"
+title: "ETC. programmers 프로그래머스 자바 '배달' 문제풀이"
 date: 2021-08-08
 layout:
 tags: programmers
