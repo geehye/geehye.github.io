@@ -1,5 +1,5 @@
 ---
-title: "Heap programmers 프로그래머스 알고리즘 자바 '디스크컨트롤러' 문제풀이"
+title: "Heap 프로그래머스 알고리즘 자바 '디스크컨트롤러' 문제풀이"
 date: 2019-03-15
 layout:
 tags: programmers
