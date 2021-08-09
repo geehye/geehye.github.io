@@ -1,5 +1,5 @@
 ---
-title: "Greedy '저울' 알고리즘 문제풀이"
+title: "Greedy 프로그래머스 '저울' 알고리즘 문제풀이"
 date: 2019-02-17
 layout:
 tags: programmers
