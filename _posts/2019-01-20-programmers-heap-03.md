@@ -1,5 +1,5 @@
 ---
-title: "Heap '이중우선순위큐' 알고리즘 문제풀이"
+title: "Heap 프로그래머스 '이중우선순위큐' 알고리즘 문제풀이"
 date: 2019-01-20
 layout:
 tags: programmers
