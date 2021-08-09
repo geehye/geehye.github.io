@@ -1,5 +1,5 @@
 ---
-title: "Greedy '단속카메라' 알고리즘 문제풀이"
+title: "Greedy 프로그래머스 '단속카메라' 알고리즘 문제풀이"
 date: 2019-02-16
 layout:
 tags: programmers
