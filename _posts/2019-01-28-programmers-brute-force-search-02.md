@@ -15,42 +15,52 @@ tags: programmers
 
 
 ## Solution
-<pre>
-import java.util.ArrayList;
-import java.util.List;
-public class FindPrimeNumber {	
-	static List<Integer> list = new ArrayList<Integer>();
-	static List<Integer> noDupList = new ArrayList<Integer>();
-	
-	public int solution(String numbers) {
-        permutation("", numbers);
-        for(int i = 0; i < list.size(); i++) {
-        	if(!noDupList.contains(list.get(i)))
-        		noDupList.add(list.get(i));
-        }
-        
-        noDupList.removeIf(a -> a == 1 | a == 0);
-        for(int i = 0; i < noDupList.size(); i++) {
-        	int tmp = noDupList.get(i); 
-        	for(int j = 2; j < tmp; j++)
-        		if(tmp % j == 0) {
-        			noDupList.remove(i--); // after removing list, index changed.
-        			break;
-        		}       			
-        }                    
 
-        return noDupList.size();
+
+```java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+class Solution {
+    static List<Integer> numList = new ArrayList<Integer>();
+    
+    public int solution(String numbers) {
+        int tmp = 0;
+        
+        makePrimeNum("", numbers);
+        
+        numList = numList.stream().distinct().collect(Collectors.toList()); // 중복값 제거
+        numList.removeIf(a -> a == 1 | a == 0); // 0과 1은 소수가 아니다.
+        
+        for (int i = 0; i < numList.size(); i++) {
+            tmp = numList.get(i);
+            
+            for (int j = 2; j < tmp; j++) {
+                /* 자기보다 작은 수로 나눠서 나머지가 0이면 약수가 존재하므로 소수가 아님 */
+                if (tmp % j == 0) {
+                    numList.remove(i--); // 삭제하고나면, 리스트 사이즈 줄어드므로 인덱스 조정 필요
+                    break;
+                }
+            }
+        }
+
+        return numList.size();
     }
-	
-	public void permutation(String s, String number) {
-		if(number.length() == 0) {
-			if(!s.equals(""))
-				list.add(Integer.parseInt(s));
-		}else {
-			for(int i = 0; i < number.length(); i++)
-				permutation(s + number.charAt(i), number.substring(0, i) + number.substring(i + 1, number.length()));
-			for(int i = 0; i < number.length(); i++)
-				permutation(s, number.substring(0, i) + number.substring(i + 1, number.length()));
-		}
-	}
-}  
+    
+    public void makePrimeNum(String str, String numStr) {
+        if (numStr.length() == 0) {
+            if (!str.equals(""))
+                numList.add(Integer.parseInt(str));
+        }
+        else
+        {
+            for (int i = 0; i < numStr.length(); i++) {
+                makePrimeNum(str + numStr.charAt(i), numStr.substring(0, i) + numStr.substring(i + 1, numStr.length()));
+            }
+            
+            makePrimeNum(str, "");
+        }
+    }
+}
+```
