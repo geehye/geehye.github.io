@@ -1,5 +1,5 @@
 ---
-title: "Brute-force Search '카펫' 알고리즘 문제풀이"
+title: "BruteForceSearch 프로그래머스 '카펫' 알고리즘 문제풀이"
 date: 2019-01-29
 layout:
 tags: programmers
