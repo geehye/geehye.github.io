@@ -1,5 +1,5 @@
 ---
-title: "BruteForceSearch programmers 프로그래머스 알고리즘 자바 '숫자야구' 문제풀이"
+title: "BruteForceSearch 프로그래머스 알고리즘 자바 '숫자야구' 문제풀이"
 date: 2019-03-14
 layout:
 tags: programmers
