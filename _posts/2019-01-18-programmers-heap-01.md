@@ -1,5 +1,5 @@
 ---
-title: "Heap '더 맵게' 알고리즘 문제풀이"
+title: "Heap 프로그래머스 '더 맵게' 알고리즘 문제풀이"
 date: 2019-01-18
 layout:
 tags: programmers
