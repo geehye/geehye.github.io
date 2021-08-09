@@ -1,5 +1,5 @@
 ---
-title: "Stack/Queue programmers 프로그래머스 알고리즘 자바 '프린터' 문제풀이"
+title: "Stack/Queue 프로그래머스 알고리즘 자바 '프린터' 문제풀이"
 date: 2019-03-15
 layout:
 tags: programmers
