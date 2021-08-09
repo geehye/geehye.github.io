@@ -1,5 +1,5 @@
 ---
-title: "DFS programmers 프로그래머스 알고리즘 자바 '네트워크' 문제풀이"
+title: "DFS 프로그래머스 알고리즘 자바 '네트워크' 문제풀이"
 date: 2019-03-13
 layout:
 tags: programmers
