@@ -1,5 +1,5 @@
 ---
-title: "Greedy '구명보트' 알고리즘 문제풀이"
+title: "Greedy 프로그래머스 '구명보트' 알고리즘 문제풀이"
 date: 2019-02-14
 layout:
 tags: programmers
