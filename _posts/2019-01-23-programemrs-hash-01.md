@@ -1,5 +1,5 @@
 ---
-title: "Hash '완주하지 못한 선수' 알고리즘 문제풀이"
+title: "Hash 프로그래머스 '완주하지 못한 선수' 알고리즘 문제풀이"
 date: 2019-01-23
 layout:
 tags: programmers
