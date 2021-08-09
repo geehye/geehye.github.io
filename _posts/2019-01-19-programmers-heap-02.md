@@ -1,5 +1,5 @@
 ---
-title: "Heap '라면공장' 알고리즘 문제풀이"
+title: "Heap 프로그래머스 '라면공장' 알고리즘 문제풀이"
 date: 2019-01-19
 layout:
 tags: programmers
