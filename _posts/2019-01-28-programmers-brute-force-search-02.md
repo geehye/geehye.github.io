@@ -1,5 +1,5 @@
 ---
-title: "Brute-force Search  '소수 찾기' 알고리즘 문제풀이"
+title: "BruteForceSearch  '소수 찾기' 알고리즘 문제풀이"
 date: 2019-01-28
 layout:
 tags: programmers
