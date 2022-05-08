@@ -6,5 +6,5 @@ main:
     url: /_pages/issues
   - title: "TIL"
     url: /_pages/todayILearned
-  - title: "MyDays"
-    url: /_pages/mydays
+  - title: "AI"
+    url: /_pages/AI
