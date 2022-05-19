@@ -29,7 +29,6 @@ class Solution {
     
     public int solution(int n, int[][] edge)
     {
-        int answer = 0;
         int qsize = 0;
         visit = new boolean[n+1];
         
@@ -38,7 +37,6 @@ class Solution {
         while(!queue.isEmpty())
         {
             qsize = queue.size();
-            answer = Math.max(answer, qsize);
             
             for (int idx = 0; idx < qsize; idx++)
             {
@@ -46,7 +44,7 @@ class Solution {
             }
         }
 
-        return answer;
+        return qsize;
     }
 }
         
