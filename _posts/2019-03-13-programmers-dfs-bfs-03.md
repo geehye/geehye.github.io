@@ -32,39 +32,44 @@ tags: programmers
 
 
 ## Code
-<pre>
+```java
 class Solution {
 	static boolean[] v;
+	
 	public int dfs(String begin, String target, String[] words) {
 		int answer = 0;
 		String dupBegin;
 		
-		for(int i = 0; i < words.length; i++) {
-			if(v[i]) continue;
+		for (int i = 0; i < words.length; i++) {
+			if (v[i]) continue;
 			
-			for(int j = 0; j < begin.length(); j++) {
+			for (int j = 0; j < begin.length(); j++) {
 				dupBegin = begin;
+				/* 앞자리부터 한글자씩 쪼개서 한자리씩 글자 변환하기 */
 				dupBegin = (j > 0 ? begin.substring(0, j) : "") 
                                 + words[i].charAt(j) + (j < begin.length()-1 ? begin.substring(j+1) : "");				
 				
-				if(dupBegin.equals(target)) 
-					return 1;
-				if(dupBegin.equals(words[i])) {
+				if (dupBegin.equals(target)) return 1;
+				if (dupBegin.equals(words[i])) {
 					v[i] = true;
 					answer = 1;
 					answer += dfs(dupBegin, target, words);
 				}
 			}
 		}
+		
 		return answer;
 	}
 	
 	public int solution(String begin, String target, String[] words) {
-		v = new boolean[words.length + 1];	
-        for(int i = 0; i < words.length; i++){
-            if(target.equals(words[i]))
-                return dfs(begin, target, words);
-        }
-		return 0;
+		v = new boolean[words.length + 1]; // 방문체크 visit
+		
+		for (int i = 0; i < words.length; i++) {
+		    if (target.equals(words[i]))
+			return dfs(begin, target, words);
+		}
+	
+		return 0; // 주어진 words[] 에 target이 존재하지 않으므로 0 반환
 	}
 }
+```
