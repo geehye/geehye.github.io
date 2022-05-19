@@ -31,7 +31,7 @@ class Solution {
     {
         int answer = 0;
         int qsize = 0;
-        visit = new boolean[n+1][n+1];
+        visit = new boolean[n+1];
         
         bfs(n, 1, edge); // 1부터 시작
         
