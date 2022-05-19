@@ -39,27 +39,34 @@ class Solution {
 	private void dfs(String[][] tickets, String end, int cnt) {
 		route += end + ",";
 		
-		if(cnt == tickets.length) {
-			list.add(route); return;
+		if (cnt == tickets.length) {
+			list.add(route);
+			return;
 		}
 		
-		for(int i = 0; i < tickets.length; i++) {
+		/* 다시 처음부터 항공권정보 조회 */
+		for (int i = 0; i < tickets.length; i++) {
 			String s = tickets[i][0], e = tickets[i][1];
-			if(s.equals(end) && !visit[i]) {
+			
+			if (s.equals(end) && !visit[i]) {
 				visit[i] = true;
 				dfs(tickets, e, cnt + 1);
-				visit[i] = false; route = route.substring(0, route.length()-4);
+				
+				/* 지금 선택한 경로 말고 다른 경로도 가능할 수 있으므로 초기화 */
+				visit[i] = false;
+				route = route.substring(0, route.length()-4);
 			}
 		}
 	}
 	
 	public String[] solution(String[][] tickets) {
-		for(int i = 0; i < tickets.length; i++) {
+		for (int i = 0; i < tickets.length; i++) {
 			visit = new boolean[tickets.length];
 			String start = tickets[i][0], end = tickets[i][1];
 			
-			if(start.equals("ICN")) {
-				route = start + ","; visit[i] = true; 
+			if (start.equals("ICN")) { // 항상 ICN 먼저 시작
+				visit[i] = true;
+				route = start + ",";
 				dfs(tickets, end, 1);
 			}
 		}
